@@ -3,27 +3,28 @@ import Decomposition.Aggregation.Aircraft;
 import Decomposition.Aggregation.CrewMember;
 import Decomposition.Aggregation.CustomerService;
 import Decomposition.Composition.*;
+import Immutability.Student;
+import Inheritance.BaseballPlayer;
+import Inheritance.*;
+
+import java.util.Date;
 
 public class App {
     public static void main(String[] args) throws Exception {
         
-        // THis is wrong because of composition relationship
-        Room r1 = new Room(30, 30);
-        r1.getWidth();
+        /* 
+        Student s1 = new Student("Tyler", 22, new Date(20000));
+
+        Date s1_dob = s1.getDob();
+        s1_dob.setTime(40000);
+        */
 
 
-        CrewMember c1 = new CrewMember("Sierra");
-        CustomerService cs = new CustomerService(c1);
+        Person p1 = new Person("Tyler", 22);
 
-        {
-            Aircraft a1 = new Aircraft("EM24K",+);
-            a1.getId();
-            c1.getName();
-        }
-
-        a1.getId(); // Why this is an error? 
-        c1.getName(); 
-
+        BaseballPlayer p2 = new BaseballPlayer("Tyler", 22, 0.202, 35);
+        
+        
 
         
     }
