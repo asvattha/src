@@ -23,8 +23,12 @@ public class App {
         Person p1 = new Person("Tyler", 22);
 
         BaseballPlayer p2 = new BaseballPlayer("Tyler", 22, 0.202, 35);
-        
-        
+        p2.getName();
+
+
+        BaseballPlayer p3 = new BaseballPlayer("Timothy", 26, 0.232, 40);
+        p3.getName();
+        p3.foo();
 
         
     }

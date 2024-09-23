@@ -6,13 +6,16 @@ public class BaseballPlayer extends Person{
     int homeRuns;
 
     public BaseballPlayer(String name, int age, double battingAvg, int homeRuns){
-        this.name = name;
-        this.age = age;
+        super(name, age); // parameterized constructor of the base class
         this.battingAvg = battingAvg;
         this.homeRuns = homeRuns;
         
     }
 
+    // Method Overriding
+    public void foo() {
+        System.out.println("Do Something Else");
+    }
 
     public double getBattingAvg() {
         return battingAvg;
