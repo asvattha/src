@@ -2,7 +2,7 @@ package Inheritance;
 
 public class Person {
     
-    String name;
+    protected String name;
     int age;
 
     public Person(String name, int age){
@@ -19,7 +19,9 @@ public class Person {
         System.out.println("Do Something");
     }
 
-    
+    public void isOdd() {
+
+    }
 
     public String getName(){
         return name;

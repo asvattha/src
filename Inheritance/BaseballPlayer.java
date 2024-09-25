@@ -12,9 +12,22 @@ public class BaseballPlayer extends Person{
         
     }
 
+    @Override
+    public int isOdd(int x){
+        return 1;
+    }
+
+
+    @Override
     // Method Overriding
     public void foo() {
+        name = "Robin";
+        //super.foo();
         System.out.println("Do Something Else");
+    }
+
+    public void add() {
+        isOdd();
     }
 
     public double getBattingAvg() {
@@ -23,6 +36,11 @@ public class BaseballPlayer extends Person{
 
     public int getHomeRun(){
         return homeRuns;
+    }
+
+    public void bar() {
+        super.foo();
+        System.out.println("Do Something else");
     }
 
 }
