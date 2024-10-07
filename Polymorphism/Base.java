@@ -10,5 +10,9 @@ public class Base {
     public int getValue() {
         return value;
     }
+
+    public void foo() {
+        System.err.println("Base is called");
+    }
     
 }

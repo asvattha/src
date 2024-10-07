@@ -9,4 +9,9 @@ public class Derived extends Base{
     public int getValueDoubled() {
         return getValue() * 2;
     }
+
+    @Override
+    public void foo(){
+        System.out.println("Derived is called");
+    }
 }

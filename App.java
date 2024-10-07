@@ -14,37 +14,51 @@ import java.util.Date;
 public class App {
     public static void main(String[] args) throws Exception {
         
+        Animal[] animals = new Animal[6];
+        animals[0] = new Dog("Cassy");
+        animals[1] = new Dog("Buster");
+        animals[2] = new Dog("Heidi");
+        animals[3] = new Cat("Mary");
+        animals[4] = new Cat("Lucy");
+        animals[5] = new Cat("Cupcake");
+
+
+        for(Animal a: animals){
+            report(a);
+        }
         /* 
-        Student s1 = new Student("Tyler", 22, new Date(20000));
+        Dog[] dogs = new Dog[3];
+        dogs[0] = new Dog("Cassy");
+        dogs[1] = new Dog("Buster");
+        dogs[2] = new Dog("Heidi");
 
-        Date s1_dob = s1.getDob();
-        s1_dob.setTime(40000);
-        */
+        Cat[] cats = new Cat[3];
+        cats[0] = new Cat("Mary");
+        cats[1] = new Cat("Lucy");
+        cats[2] = new Cat("Cupcake");
 
-/* 
-        Person p1 = new Person("Tyler", 22);
+        for(Dog d: dogs) {
+            //reportDog(d);
+            report(d);
+        }
 
-        BaseballPlayer p2 = new BaseballPlayer("Tyler", 22, 0.202, 35);
-        p2.getName();
-        p2.foo();
-
-
-        BaseballPlayer p3 = new BaseballPlayer("Timothy", 26, 0.232, 40);
-        p3.getName();
-        p3.foo();
-        */
-
-        /* 
-        Student s1 = new Student("Tyler", 22, 3.5);
-        Student s2 = new Student("Kyla", 24, 3.8);
-
-        s1.compareTo(s2);
-        s1.foo();
-        s2.foo();
-        */
-
-        Base obj1 = new Derived(10); // Widening
-        System.out.println(obj1.getValue()); 
+        for(Cat c: cats) {
+            report(c);
+        }
+            */
 
     }
+
+    public static void report(Animal a){
+        System.out.println(a.getName() + " speaks " + a.speak());
+    }
+    /* 
+    public static void reportDog(Dog d){
+        System.out.println(d.getName() +  " speaks " + d.speak());
+    }
+
+    public static void reportCat(Cat c){
+        System.out.println(c.getName() +  " speaks " + c.speak());
+    }
+        */
 }
