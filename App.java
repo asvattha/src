@@ -9,56 +9,35 @@ import Inheritance.*;
 import this_reference.Student;
 import Polymorphism.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import Interfaces.House;
 
 public class App {
     public static void main(String[] args) throws Exception {
         
-        Animal[] animals = new Animal[6];
-        animals[0] = new Dog("Cassy");
-        animals[1] = new Dog("Buster");
-        animals[2] = new Dog("Heidi");
-        animals[3] = new Cat("Mary");
-        animals[4] = new Cat("Lucy");
-        animals[5] = new Cat("Cupcake");
+        House h1 = new House("Tyler", 3000, LocalDate.of(1986, 12, 20)); // 0xA
+        House h2 = new House("Kyla", 4000, LocalDate.of(1965, 5, 25));
+        House h3 = new House("Hector", 2000, LocalDate.of(2020, 8, 12));
 
+        ArrayList<House> houses = new ArrayList<House>(List.of(h1, h2, h3));
 
-        for(Animal a: animals){
-            report(a);
-        }
-        /* 
-        Dog[] dogs = new Dog[3];
-        dogs[0] = new Dog("Cassy");
-        dogs[1] = new Dog("Buster");
-        dogs[2] = new Dog("Heidi");
-
-        Cat[] cats = new Cat[3];
-        cats[0] = new Cat("Mary");
-        cats[1] = new Cat("Lucy");
-        cats[2] = new Cat("Cupcake");
-
-        for(Dog d: dogs) {
-            //reportDog(d);
-            report(d);
+        Collections.sort(houses);
+        for(House h : houses){
+            System.out.println(h);
         }
 
-        for(Cat c: cats) {
-            report(c);
-        }
-            */
+        House h4 = h1; // h4 is storing 0xA
+        System.out.println(h4 == h1);
+
+        House h5 = (House)h1.clone();
+        System.out.println(h5 == h1);
+
+        System.out.println(h5.getDateBuilt() == h1.getDateBuilt());
+
 
     }
 
-    public static void report(Animal a){
-        System.out.println(a.getName() + " speaks " + a.speak());
-    }
-    /* 
-    public static void reportDog(Dog d){
-        System.out.println(d.getName() +  " speaks " + d.speak());
-    }
-
-    public static void reportCat(Cat c){
-        System.out.println(c.getName() +  " speaks " + c.speak());
-    }
-        */
 }
