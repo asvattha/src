@@ -1,4 +1,7 @@
 package ExceptionHandling;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Quotient {
 
@@ -14,6 +17,30 @@ public class Quotient {
             throw new ArithmeticException(); // throwing exception
         }
         return num / den;
+    }
+
+    public void foo(String filePath) throws FileNotFoundException {
+
+        
+        
+        File file = new File(filePath);
+        Scanner input = new Scanner(file);
+
+         
+        if (!file.exists()) {
+            throw new FileNotFoundException();
+        }
+
+        while(input.hasNext()){
+            String firstName = input.next();
+            String lastName = input.next();
+            int id = input.nextInt();
+
+            System.out.println(firstName + ", " + lastName +", " + id);
+        }
+
+        input.close();
+    
     }
     
 }
