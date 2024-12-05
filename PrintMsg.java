@@ -1,20 +1,25 @@
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrintMsg {
-    AtomicInteger count = new AtomicInteger(0);
+    int count = 0;
 
     void increment() {
+        double x = 6.5;
         for(int i = 0; i < 50000; i++)
-            count.getAndIncrement();
+        synchronized(this){ // Intrinsic Locks
+            count++;
+        }
     }
 
     void decrement() {
+        double x = 60.9;
         for(int i = 0; i < 50000; i++)
-            count.getAndDecrement();
+        synchronized(this) { count--; }
     }
 
     public int getValue() {
-        return count.get();
+        return count;
     }
 
+    
 }

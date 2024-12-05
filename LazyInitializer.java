@@ -1,7 +1,7 @@
 public class LazyInitializer {
     private Animal animal;
 
-    public Animal getInstance() {
+    public synchronized Animal getInstance() {
         if(animal == null){
             animal = new Animal();
         }
